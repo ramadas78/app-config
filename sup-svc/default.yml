@@ -1,0 +1,31 @@
+#Basic Spring Boot Config for Oracle
+info:
+  app:
+    name: '@group@.@name@'
+    description: '@description@'
+  build:
+    version: '@version@'
+    timestamp: '@timestamp@'
+    commit: '@jenkins_commit@'
+    label: '@jenkins_BUILD_NUMBER@'
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.22.191.5:5432/7eP
+    username: suppusr
+    password: suppusr
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        generate_statistics: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+server:
+  port: ${PORT:3081}
