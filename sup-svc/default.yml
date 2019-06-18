@@ -10,6 +10,8 @@ info:
     label: '@jenkins_BUILD_NUMBER@'
 
 spring:
+  application:
+    name: sup-svc
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://172.22.191.5:5432/7eP
@@ -29,3 +31,6 @@ spring:
 
 server:
   port: ${PORT:3081}
+
+user:
+  role: developer
